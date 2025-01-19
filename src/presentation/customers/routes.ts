@@ -12,7 +12,7 @@ export class CustomerRouters {
 
         const controller = new CustomersController(customerService);
 
-        router.post('/ccustomer', controller.createCustomer);
+        router.post('/customer', controller.createCustomer);
 
         router.get('/customers', controller.getCustomers);
         router.get('/customer/:id', controller.getCustomerById);

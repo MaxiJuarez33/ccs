@@ -25,4 +25,13 @@ export class CustomError extends Error {
     static internalServer(message: string) {
         return new CustomError(500, message);
     }
+    static created(message: string) {
+        return new CustomError(201, message);
+    }
+    static noContent(message: string) {
+        return new CustomError(204, message);
+    }
+    static ok(message: string) {
+        return new CustomError(200, message);
+    }
 }
