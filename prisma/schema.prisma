@@ -21,6 +21,7 @@ model CustomerModel {
   address   String
   createdAt DateTime     @default(now())
   orders    OrderModel[]
+  Vehicle   Vehicle[]
 }
 
 model OrderModel {
@@ -30,4 +31,37 @@ model OrderModel {
   createdAt   DateTime      @default(now())
   customerId  Int
   customer    CustomerModel @relation(fields: [customerId], references: [id])
+  TimeSlot    TimeSlot      @relation(fields: [timeSlotId], references: [id])
+  timeSlotId  Int
+  washTypeId  Int
+  washType    WashType      @relation(fields: [washTypeId], references: [id])
+  Vehicle     Vehicle       @relation(fields: [vehicleId], references: [id])
+  vehicleId   Int
+}
+
+model TimeSlot {
+  id          Int          @id @default(autoincrement())
+  startTime   DateTime
+  endTime     DateTime
+  isAvailable Boolean      @default(true)
+  orders      OrderModel[]
+}
+
+model WashType {
+  id          Int          @id @default(autoincrement())
+  name        String
+  description String?
+  price       Float
+  orders      OrderModel[]
+}
+
+model Vehicle {
+  id          Int           @id @default(autoincrement())
+  customerId  Int
+  customer    CustomerModel @relation(fields: [customerId], references: [id])
+  make        String
+  model       String
+  plateNumber String
+  description String?
+  orders      OrderModel[]
 }

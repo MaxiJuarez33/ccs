@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { CustomersController } from "./controller";
+import { OrdersController } from "./controller";
 import { CustomerService } from "../services/customer.service";
 
 
