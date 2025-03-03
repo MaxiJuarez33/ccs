@@ -13,6 +13,7 @@ export class CustomersController {
             return res.status(error.statusCode).json({error: error.message});
 
         }
+        console.error(error);
         return res.status(500).json({error: 'Internal server error'});
     }
     

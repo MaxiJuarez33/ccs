@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { WashTypesService } from "../services/wash-types.service";
-import { WashTypesController } from "./controller";
+import { VehicleService } from "../services/vehicle.service";
+// import { WashTypesController } from "./controller";
 
 
 export class WashTypesRoutes {
@@ -8,9 +8,9 @@ export class WashTypesRoutes {
     static get routes(): Router {
         
         const router = Router();
-        const washTypesService = new WashTypesService();
+        const vehicleService = new VehicleService();
 
-        const controller = new WashTypesController(washTypesService);
+        const controller = new Vehicle(washTypesService);
 
         router.post('/washtype', controller.createWashType); // Funciona
 

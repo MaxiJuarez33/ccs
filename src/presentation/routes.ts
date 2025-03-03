@@ -13,9 +13,9 @@ export class AppRoutes {
 
     const router = Router();
     
-    router.use('/ccs', CustomerRouters.routes);
-    router.use('/ccs/dashboard', TimeSlotRoutes.routes);
-    router.use('/ccs/dashboard', WashTypesRoutes.routes);
+    router.use('/ccs', CustomerRouters.routes); // For user, funciona todo
+    router.use('/ccs/dashboard', TimeSlotRoutes.routes); // For admin, funciona todo
+    router.use('/ccs/dashboard', WashTypesRoutes.routes); // For admin, funciona todo
 
 
 

@@ -22,6 +22,7 @@ export class CreateVehicleDto {
         if(description === '') return ['Description could not be empty'];
 
 
+        console.log(new CreateVehicleDto(type, description, customerId));
         return [undefined, new CreateVehicleDto(type, description, customerId)];
     }
     

@@ -5,7 +5,7 @@ export class CreateTimeSlotDto {
 
     private constructor(
         public start: string,
-        public end?: string,
+        public end: string,
         public isAvailable?: boolean,
     ){}
 
@@ -17,6 +17,7 @@ export class CreateTimeSlotDto {
         if(start === '') return ['Start could not be empty'];
         if(!regularExps.time.test(start)) return ['Start is invalid'];
 
+        if(end === undefined) return ['End is required'];
         if(end === '') return ['End could not be empty'];
         if(end !== undefined && !regularExps.time.test(end)) return ['End is invalid'];
 

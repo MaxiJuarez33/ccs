@@ -12,14 +12,14 @@ export class TimeSlotRoutes {
 
         const controller = new TimeSlotController(timeSlotService);
 
-        router.post('/timeslot', controller.createTimeSlot);
+        router.post('/timeslot', controller.createTimeSlot); // Funciona
 
-        router.get('/timeslots', controller.getTimeSlots);
-        router.get('/timeslot/:id', controller.getTimeSlotById);
-
-        router.put('/timeslot/:id', controller.updateTimeSlot);
+        router.get('/timeslots', controller.getTimeSlots); // Funciona
+        router.get('/timeslot/:id', controller.getTimeSlotById); // Funciona
+ 
+        router.put('/timeslot/:id', controller.updateTimeSlot); // Funciona
         
-        router.delete('/timeslot/:id', controller.deleteTimeSlot);
+        router.delete('/timeslot/:id', controller.deleteTimeSlot); // Funciona
         
         return router;
     }

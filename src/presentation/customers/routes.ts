@@ -12,14 +12,14 @@ export class CustomerRouters {
 
         const controller = new CustomersController(customerService);
 
-        router.post('/customer', controller.createCustomer);
+        router.post('/customer', controller.createCustomer); // Funciona
 
-        router.get('/customers', controller.getCustomers);
-        router.get('/customer/:id', controller.getCustomerById);
+        router.get('/customers', controller.getCustomers); // Funciona
+        router.get('/customer/:id', controller.getCustomerById); // Funciona
 
-        router.put('/customer/:id', controller.updateCustomer);
+        router.put('/customer/:id', controller.updateCustomer); // Funciona
         
-        router.delete('/customer/:id', controller.deleteCustomer);
+        router.delete('/customer/:id', controller.deleteCustomer); // Funciona
         
         return router;
     }

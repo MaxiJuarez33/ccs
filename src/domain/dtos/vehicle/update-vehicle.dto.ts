@@ -4,8 +4,8 @@
 export class UpdateVehicleDto {
 
     constructor(
-        public readonly type?: string,
         public readonly customerId: number,
+        public readonly type?: string,
         public readonly description?: string,
     ){}
 
